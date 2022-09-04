@@ -1,0 +1,110 @@
+"Games"
+{
+    "#default"
+    {
+        "#supported"
+        {
+            "engine"    "tf2"
+        }
+        "Addresses"
+		{
+			"s_ParticleSystemMgr"
+			{
+				"linux"
+				{
+					"signature" "s_ParticleSystemMgr"
+				}
+			}
+            "s_ParticleSystemQuery"
+			{
+				"linux"
+				{
+					"signature" "s_ParticleSystemQuery"
+				}
+			}
+		}
+        "Signatures"
+        {
+            "CServerGameDLL::LevelInit"
+            {
+                "library"       "server"
+                "linux"         "@_ZN14CServerGameDLL9LevelInitEPKcS1_S1_S1_bb"
+            }
+            "CParticleSystemMgr::CParticleSystemMgr"
+            {
+                "library"       "server"
+                "linux"         "@_ZN18CParticleSystemMgrC2Ev"
+            }
+            "CParticleSystemMgr::~CParticleSystemMgr"
+            {
+                "library"       "server"
+                "linux"         "@_ZN18CParticleSystemMgrD2Ev"
+            }
+            "CParticleSystemMgr::Init"
+            {
+                "library"       "server"
+                "linux"         "@_ZN18CParticleSystemMgr4InitEP20IParticleSystemQuery"
+            }
+            "CParticleSystemMgr::GetParticleSystemCount"
+            {
+                "library"       "server"
+                "linux"         "@_ZN18CParticleSystemMgr22GetParticleSystemCountEv"
+            }
+            "ParseParticleEffects"
+            {
+                "library"       "server"
+                "linux"         "@_Z20ParseParticleEffectsbb"
+            }
+            "s_ParticleSystemMgr"
+            {
+                "library"       "server"
+                "linux"         "@_ZL19s_ParticleSystemMgr"
+            }
+            "s_ParticleSystemQuery"
+            {
+                "library"       "server"
+                "linux"         "@_ZL21s_ParticleSystemQuery"
+            }
+        }
+
+        "Functions"
+        {
+            "CServerGameDLL::LevelInit"
+            {
+                "signature"     "CServerGameDLL::LevelInit"
+                "callconv"      "thiscall"
+                "this"          "address"
+                "return"        "bool"
+                //const char *pMapName, char const *pMapEntities, char const *pOldLevel, char const *pLandmarkName, bool loadGame, bool background
+                "arguments"
+                {
+                    // char*??
+                    "pMapName"
+                    {
+                        "type"  "int"
+                    }
+                    "pMapEntities"
+                    {
+                        "type"  "int"
+                    }
+                    "pOldLevel"
+                    {
+                        "type"  "int"
+                    }
+                    "pLandmarkName"
+                    {
+                        "type"  "int"
+                    }
+                    "loadGame"
+                    {
+                        "type"  "bool"
+                    }
+                    "background"
+                    {
+                        "type"  "bool"
+                    }
+                }
+            }
+        }
+    }
+}
