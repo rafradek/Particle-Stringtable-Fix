@@ -69,11 +69,9 @@ public void OnPluginStart()
 
 public MRESReturn DHookCallback_CServerGameDLL_LevelInit(Address pThis, DHookReturn hReturn, DHookParam hParams)
 {
-	PrintToServer("Pre Count %d\n", SDKCall(particle_system_mgr_count, particle_system_mgr_addr));
 	SDKCall(particle_system_mgr_destroy, particle_system_mgr_addr);
 	SDKCall(particle_system_mgr_create, particle_system_mgr_addr);
 	SDKCall(particle_system_mgr_init, particle_system_mgr_addr, particle_system_query_addr);
 	SDKCall(parse_particle_effects, false, false);
-	PrintToServer("Post Count %d\n", SDKCall(particle_system_mgr_count, particle_system_mgr_addr));
 	return MRES_Ignored;
 }
