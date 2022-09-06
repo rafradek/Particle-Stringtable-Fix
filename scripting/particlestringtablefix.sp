@@ -7,17 +7,17 @@ DynamicDetour g_hDHook_CServerGameDLL_LevelInit;
 
 public Plugin myinfo =
 {
-	name 		= "string table expander, for TF2",
-	author 		= "PŠΣ™ SHUFEN, sappho.io",
-	description = "Port of https://forums.alliedmods.net/showthread.php?t=322106 to TF2, fixes several stringtables that servers can often run up against the limits of",
-	version 	= "0.x",
+	name 		= "Particle String Table Fix",
+	author 		= "rafradek",
+	description = "Port of https://forums.alliedmods.net/showthread.php?t=322106 to TF2",
+	version 	= "1",
 	url 		= ""
 };
 
 Handle particle_system_mgr_create;
 Handle particle_system_mgr_destroy;
 Handle particle_system_mgr_init;
-Handle particle_system_mgr_count;
+//Handle particle_system_mgr_count;
 Handle parse_particle_effects;
 
 Address particle_system_mgr_addr;
@@ -51,10 +51,10 @@ public void OnPluginStart()
 	PrepSDKCall_AddParameter(SDKType_PlainOldData,SDKPass_Plain);
 	particle_system_mgr_init=EndPrepSDKCall();
 
-    StartPrepSDKCall(SDKCall_Raw);
-	PrepSDKCall_SetFromConf(hGameData,SDKConf_Signature, "CParticleSystemMgr::GetParticleSystemCount");
-    PrepSDKCall_SetReturnInfo(SDKType_PlainOldData, SDKPass_Plain);
-	particle_system_mgr_count=EndPrepSDKCall();
+    // StartPrepSDKCall(SDKCall_Raw);
+	// PrepSDKCall_SetFromConf(hGameData,SDKConf_Signature, "CParticleSystemMgr::GetParticleSystemCount");
+    // PrepSDKCall_SetReturnInfo(SDKType_PlainOldData, SDKPass_Plain);
+	// particle_system_mgr_count=EndPrepSDKCall();
 
     StartPrepSDKCall(SDKCall_Static);
 	PrepSDKCall_SetFromConf(hGameData,SDKConf_Signature, "ParseParticleEffects");
